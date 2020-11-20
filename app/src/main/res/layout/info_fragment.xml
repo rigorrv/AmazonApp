@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ui.fragment.InfoFragment">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="net.android.amazonapp.ui.fragment.InfoFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:background="#3C4B60"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#3C4B60"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/powered_by_rigo"
+            android:textAlignment="center"
+            android:textColor="#FF9900"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#ECEAEA">
+
+                            <View
+                                android:id="@+id/view"
+                                android:layout_width="0dp"
+                                android:layout_height="10dp"
+                                android:background="#FF9901"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/itemPicture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp"
+                                android:minWidth="200dp"
+                                android:minHeight="200dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/view"
+
+                                tools:src="@tools:sample/avatars"
+                                android:contentDescription="@string/product_picture" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/itemName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text=""
+                            android:textColor="#3C4B60"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+                        <RatingBar
+                            android:id="@+id/ratingItem"
+                            style="@android:style/Widget.Holo.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:progressBackgroundTint="#FF9901"
+                            app:layout_constraintBottom_toBottomOf="@+id/itemName"
+                            app:layout_constraintStart_toEndOf="@+id/itemName"
+                            app:layout_constraintTop_toTopOf="@+id/itemName" />
+
+                        <TextView
+                            android:id="@+id/priceItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text=""
+                            android:textColor="#3C4B60"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/ic_baseline_payment_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                            app:tint="#3C4B60"
+                            android:contentDescription="@string/pay_icon" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/a_toy_is_an_item_that_is_used_in_play_especially_one_designed_for_such_use_it_is_mainly_intended_for_use_by_children_though_may_also_be_marketed_to_adults_under_certain_circumstances_specifically_adult_toys_playing_with_toys_can_be_an_enjoyable_means_of_training_young_children_for_life_in_society_different_materials_like_wood_clay_paper_and_plastic_are_used_to_make_toys_many_items_are_designed_to_serve_as_toys_but_goods_produced_for_other_purposes_can_also_be_used_for_instance_a_small_child_may_fold_an_ordinary_piece_of_paper_into_an_airplane_shape_and_quot_fly_it_quot_newer_forms_of_toys_include_interactive_digital_entertainment_some_toys_are_produced_primarily_as_collectors_items_and_are_intended_for_display_only_the_origin_of_toys_is_prehistoric_dolls_representing_infants_animals_and_soldiers_as_well_as_representations_of_tools_used_by_adults_are_readily_found_at_archaeological_sites_the_origin_of_the_word_quot_toy_quot_is_unknown_but_it_is_believed_that_it_was_first_used_in_the_14th_century_toys_are_mainly_made_for_children_1_the_oldest_known_doll_toy_is_thought_to_be_4_000_years_old_2_playing_with_toys_is_considered_to_be_important_when_it_comes_to_growing_up_and_learning_about_the_world_around_us_younger_children_use_toys_to_discover_their_identity_help_their_bodies_grow_strong_learn_cause_and_effect_explore_relationships_and_practice_skills_they_will_need_as_adults_adults_on_occasion_use_toys_to_form_and_strengthen_social_bonds_teach_help_in_therapy_and_to_remember_and_reinforce_lessons_from_their_youth" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
